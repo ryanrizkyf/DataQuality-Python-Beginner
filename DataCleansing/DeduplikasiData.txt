@@ -1,0 +1,10 @@
+Duplikasi data merupakan data dengan kondisi pada row-row tertentu memiliki kesamaan data di seluruh kolomnya. 
+Tentunya ada data yang duplikat dalam dataset yang dimiliki. 
+Kondisi duplikasi harus diatasi dengan jalan mengeliminir baris yang mengalami duplikasi, 
+sehingga proses ini dikenal dengan deduplikasi.
+
+Untuk cek duplikasi data :
+nama_dataframe.duplicate(subset=None)
+
+Syntax untuk membuang duplikasi :
+nama_dataframe.drop_duplicates()
