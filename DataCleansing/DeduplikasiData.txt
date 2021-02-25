@@ -4,7 +4,7 @@ Kondisi duplikasi harus diatasi dengan jalan mengeliminir baris yang mengalami d
 sehingga proses ini dikenal dengan deduplikasi.
 
 Untuk cek duplikasi data :
-nama_dataframe.duplicate(subset=None)
+nama_dataframe.duplicated(subset=None)
 
 Syntax untuk membuang duplikasi :
 nama_dataframe.drop_duplicates()
