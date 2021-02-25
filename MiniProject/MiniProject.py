@@ -51,3 +51,23 @@ uncleaned_raw['Quantity'] = uncleaned_raw['Quantity'].fillna(
 # Mengetahui kolom yang memiliki outliers!
 uncleaned_raw.boxplot()
 plt.show()
+
+# 3. Case Study: Data Cleansing - Part 2
+# Langkah selanjutnya bisa dilakukan dengan cara berikut:
+# Melakukan proses removing outliers pada kolom UnitPrice.
+# Checking duplikasi and melakukan deduplikasi dataset tersebut!
+
+# Check IQR
+Q1 = uncleaned_raw['UnitPrice'].quantile(0.25)
+Q3 = uncleaned_raw['UnitPrice'].quantile(0.75)
+IQR = Q3 - Q1
+
+# removing outliers
+uncleaned_raw = uncleaned_raw[~((uncleaned_raw[['UnitPrice']] < (
+    Q1 - 1.5 * IQR)) | (uncleaned_raw[['UnitPrice']] > (Q3 + 1.5 * IQR)))]
+
+# check for duplication
+print(uncleaned_raw.duplicated(subset=None))
+
+# remove duplication
+uncleaned_raw = uncleaned_raw.drop_duplicates()
