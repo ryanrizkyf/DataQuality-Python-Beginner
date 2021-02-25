@@ -21,7 +21,8 @@ print(retail_raw.dtypes)
 length_city = len(retail_raw['city'])
 print('Length kolom city:', length_city)
 
-# Tugas Praktek: Kolom product_id
+# Tugas Praktek:
+# Kolom product_id
 length_product_id = len(retail_raw['product_id'])
 print('Length kolom product_id:', length_product_id)
 
@@ -29,7 +30,8 @@ print('Length kolom product_id:', length_product_id)
 count_city = retail_raw['city'].count()
 print('Count kolom count_city:', count_city)
 
-# Tugas praktek: count kolom product_id
+# Tugas praktek:
+# count kolom product_id
 count_product_id = retail_raw['product_id'].count()
 print('Count kolom product_id:', count_product_id)
 
@@ -45,7 +47,8 @@ print('Persentase missing value kolom city:', pct_of_missing_values_city)
 # sekarang kita perlu mengetahui jumlah missing-value dari kolom tersebut.
 # Ini artiya kita perlu membuat syntaks untuk menghitung persentase missing-value dari product_id.
 
-# Tugas praktek: Missing value pada kolom product_id
+# Tugas praktek:
+# Missing value pada kolom product_id
 number_of_missing_values_product_id = length_product_id - count_product_id
 float_of_missing_values_product_id = float(
     number_of_missing_values_product_id/length_product_id)

@@ -1,10 +1,37 @@
-# Quantile Statistics
-# Quantiles adalah titik potong yang membagi distribusi dalam ukuran yang sama.
-# Jika akan membagi distribusi menjadi empat grup yang sama, kuantil yang dibuat dinamai quartile.
-# Jika dibagi kedalam 10 sepuluh group yang sama dinamakan percentile.
-# Dalam kasus di bawah ini, ingin membagi distribusi menjadi empat grup atau quartile.
+# Dataset yang ditemui di real-world biasanya akan memiliki banyak missing value.
+# Kemampuan untuk treatment missing value sangat penting karena jika membiarkan missing value itu
+#  dapat memengaruhi analisis dan machine learning model.
+# Sehingga jika menemukan nilai yang hilang dalam dataset, harus melakukan treatment sedemikian rupa.
 
-# nama_dataframe["nama_kolom"].quantile([.25,.5,.75])
+# Cara check kolom yang mempunyai missing value :
+# nama_dataframe.isnull().any()
+
+# Cara treatment terhadap missing-value antara lain :
+# 1. Leave as it is (dibiarkan)
+# 2. Filling the missing value (imputasi)
+# 3. Drop them (hapus row yang mengandung missing value)
+
+# Imputasi merupakan suatu metode treatment terhadap missing value dengan mengisinya menggunakan
+# teknik tertentu. Bisa menggunakan mean, modus ataupun menggunakan predictive modelling.
+
+# Pada modul ini akan membahas mengenai pemanfaatan function fillna dari Pandas untuk imputasi ini, yaitu :
+# nama_dataframe['nama_kolom'].fillna(nama_dataframe.nama_kolom.function())
+
+# .function() yang dimaksud pada syntax di atas adalah penggunaa fungsi .mean() atau .mode().
+# Penggunaan fungsi .mean() atau .mode() ini bergantung pada kondisi yang mengharuskan menggunakan
+# nilai rata - rata atau modus dari kolom yang akan diimputasi, seperti :
+# nama_dataframe['nama_kolom'].fillna(nama_dataframe.nama_kolom.mean())
+# atau
+# nama_dataframe['nama_kolom'].fillna(nama_dataframe.nama_kolom.modus())
+
+# Drop row yang mengandung missing value. Dapat menggunakan function dropna dari Pandas.
+# nama_dataframe['nama_kolom'].dropna()
+
+# Untuk menangani missing data pada retail_raw :
+# 1. Ceklah jika terdapat missing value pada variabel dataframe, dan kemudian cetak ke console.
+# 2. Imputasi missing value pada kolom quantity dengan menggunaan nilai rataan (mean),
+# dan kemudian cetak ke console.
+# 3. Drop-lah missing value pada kolom quantity, dan kemudian cetak ke console.
 
 # Dataset : 'https://storage.googleapis.com/dqlab-dataset/retail_raw_reduced_data_quality.csv'.
 
@@ -76,12 +103,25 @@ print('Standard Deviation value: ', retail_raw['item_price'].std())
 print('Kolom quantity:')
 print(retail_raw['quantity'].quantile([0.25, 0.5, 0.75]))
 
-# Tugas Praktek:
-# Baiklah, sekarang saatnya lanjut untuk membuat distribusi quartile dari item_price dari
-# dataframe retail_raw. Kalau ini sih seharusnya mudah, kita mulai menyusun kodenya di code editor.
-
 # Tugas praktek:
 # Quantile statistics kolom item_price
 print('')
 print('Kolom item_price:')
 print(retail_raw['item_price'].quantile([0.25, 0.5, 0.75]))
+
+# Tugas Praktek:
+# Korelasi antara quantity dan item_price apa ya? Kita perlu tahu untuk melengkapi syntaks.
+print('Korelasi quantity dengan item_price')
+print(retail_raw[['quantity', 'item_price']].corr())
+
+# Check kolom yang memiliki missing data
+print('Check kolom yang memiliki missing data:')
+print(retail_raw.isnull().any())
+
+# Filling the missing value (imputasi)
+print('\nFilling the missing value (imputasi):')
+print(retail_raw['quantity'].fillna(retail_raw['quantity'].mean()))
+
+# Drop missing value
+print('\nDrop missing value:')
+print(retail_raw['quantity'].dropna())

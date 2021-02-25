@@ -1,0 +1,7 @@
+Data Cleansing berarti proses mengidentifikasi bagian data yang salah, 
+tidak lengkap, tidak akurat, tidak relevan atau hilang dan 
+kemudian memodifikasi, mengganti atau menghapusnya sesuai dengan kebutuhan. 
+Data Cleansing dianggap sebagai elemen dasar dari Data Science
+
+Pada bagian ini, akan membahas data cleansing dari treatment terhadap missing data, 
+treatment outliers, sampai deduplikasi data.

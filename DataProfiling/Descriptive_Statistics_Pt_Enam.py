@@ -22,7 +22,8 @@ print(retail_raw.dtypes)
 length_city = len(retail_raw['city'])
 print('Length kolom city:', length_city)
 
-# Tugas Praktek: Kolom product_id
+# Tugas Praktek:
+# Kolom product_id
 length_product_id = len(retail_raw['product_id'])
 print('Length kolom product_id:', length_product_id)
 
@@ -30,7 +31,8 @@ print('Length kolom product_id:', length_product_id)
 count_city = retail_raw['city'].count()
 print('Count kolom count_city:', count_city)
 
-# Tugas praktek: count kolom product_id
+# Tugas praktek:
+# count kolom product_id
 count_product_id = retail_raw['product_id'].count()
 print('Count kolom product_id:', count_product_id)
 
@@ -41,7 +43,8 @@ pct_of_missing_values_city = '{0:.1f}%'.format(
     float_of_missing_values_city * 100)
 print('Persentase missing value kolom city:', pct_of_missing_values_city)
 
-# Tugas praktek: Missing value pada kolom product_id
+# Tugas praktek:
+# Missing value pada kolom product_id
 number_of_missing_values_product_id = length_product_id - count_product_id
 float_of_missing_values_product_id = float(
     number_of_missing_values_product_id/length_product_id)
@@ -59,7 +62,8 @@ print('Mode value: ', retail_raw['quantity'].mode())
 print('Median value: ', retail_raw['quantity'].median())
 print('Standard Deviation value: ', retail_raw['quantity'].std())
 
-# Tugas praktek: Deskriptif statistics kolom item_price
+# Tugas praktek:
+# Deskriptif statistics kolom item_price
 print('')
 print('Kolom item_price')
 print('Minimum value: ', retail_raw['item_price'].min())
@@ -72,7 +76,8 @@ print('Standard Deviation value: ', retail_raw['item_price'].std())
 print('Kolom quantity:')
 print(retail_raw['quantity'].quantile([0.25, 0.5, 0.75]))
 
-# Tugas praktek: Quantile statistics kolom item_price
+# Tugas praktek:
+# Quantile statistics kolom item_price
 print('')
 print('Kolom item_price:')
 print(retail_raw['item_price'].quantile([0.25, 0.5, 0.75]))

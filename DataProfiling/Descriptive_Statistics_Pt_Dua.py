@@ -23,7 +23,8 @@ print(retail_raw.dtypes)
 length_city = len(retail_raw['city'])
 print('Length kolom city:', length_city)
 
-# Tugas Praktek: Kolom product_id
+# Tugas Praktek:
+# Kolom product_id
 length_product_id = len(retail_raw['product_id'])
 print('Length kolom product_id:', length_product_id)
 
@@ -35,6 +36,7 @@ print('Count kolom count_city:', count_city)
 # Setelah yang tadi cukup lancar, kita berniat mengetahui jumlah non-null value dari kolom product_id
 # dari dataframe retail_raw agar hasil analisisnya lebih lengkap.
 
-# Tugas praktek: count kolom product_id
+# Tugas praktek:
+# count kolom product_id
 count_product_id = retail_raw['product_id'].count()
 print('Count kolom product_id:', count_product_id)

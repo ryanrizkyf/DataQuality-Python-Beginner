@@ -30,6 +30,7 @@ print('Length kolom city:', length_city)
 # dari kolom product_id dari dataframe retail_raw! Kita akan membuat syntaks Python untuk mencapai
 # hal tersebut di code editor.
 
-# Tugas Praktek: Kolom product_id
+# Tugas Praktek:
+# Kolom product_id
 length_product_id = len(retail_raw['product_id'])
 print('Length kolom product_id:', length_product_id)
