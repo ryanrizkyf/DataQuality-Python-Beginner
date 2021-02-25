@@ -9,6 +9,7 @@
 # kolom apakah itu dan berapa persen missing value pada kolom tersebut?
 # 4. Mengisi missing value tersebut dengan mean dari kolom tersebut!
 
+import matplotlib.pyplot as plt
 import pandas as pd
 
 # Baca dataset uncleaned_raw.csv
@@ -46,3 +47,7 @@ uncleaned_raw['Quantity'] = uncleaned_raw['Quantity'].fillna(
 # 2. Case Study: Data Cleansing - Part 1
 # Untuk memprosesnya bisa dilakukan dengan cara berikut:
 # Mengetahui kolom yang memiliki outliers! Gunakan visualisasi dengan boxplot pada dataframe uncleaned_raw.
+
+# Mengetahui kolom yang memiliki outliers!
+uncleaned_raw.boxplot()
+plt.show()
